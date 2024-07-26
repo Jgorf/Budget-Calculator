@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Homepage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link href="static/css/style.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css"
+
+  </head>
+  <body id="update-body">
+    <div id="update-wrapper" class="wrapper">
+      <h1>Your taxed income is: ${{results.taxedIncome}}</h1>
+      <h2>Your remaining income is: ${{results.remaining}}</h2>
+      <div class="cardWrapper"> 
+        <div class="card" style="width: 18rem;">
+          <img src="../static/images/needs.png" id="needs-img" class="card-img-top">
+          <div class="card-body" width="350px">
+            <h5 class="card-title text-center">Needs</h5>
+            <p class="card-text">Total: ${{results.needs}}</p>
+            <p class="card-text">{{results.needAdvice}}</p>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="../static/images/wants.png" id="wants-img" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title text-center">Wants</h5>
+            <p class="card-text">Total: ${{results.wants}}</p>
+            <p class="card-text">{{results.wantAdvice}}</p>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="../static/images/savings.png" id="savings-img" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title text-center">Savings</h5>
+            <p class="card-text">Total: ${{results.savings}}</p>
+            <p class="card-text">{{results.savingAdvice}}</p>
+          </div>
+        </div>
+      </div>
+        <form class="go-back" method="post" action="/index">
+          <input class="btn btn-primary text-center" type="submit" value="Go Back" name="GoBackBtn" >    
+        </form>
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>

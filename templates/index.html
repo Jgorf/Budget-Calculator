@@ -1,0 +1,148 @@
+<html>
+<head>
+    <title>Budget Calculator</title>
+    <!-- Link to Bootstrap CSS. -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- Link to custom CSS in style.css -->
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Budgeting Calculator</h1>
+        <p>Please enter the cost of each category below.</p>
+
+        <div class="container overflow-hidden text-center">
+            <form method="post" action="/update">
+                <!--DROPDOWN OF ALL THE STATES  -->
+                <div id="stateSelect">
+                    <label for="state">Select your state:</label>
+                    <select id="state" name="state">
+                        <option value="Alabama">AL</option>
+                        <option value="Alaska">AK</option>
+                        <option value="Arizona">AZ</option>
+                        <option value="Arkansas">AR</option>
+                        <option value="California">CA</option>
+                        <option value="Colorado">CO</option>
+                        <option value="Connecticut">CT</option>
+                        <option value="Delaware">DE</option>
+                        <option value="Florida">FL</option>
+                        <option value="Georgia">GA</option>
+                        <option value="Hawaii">HI</option>
+                        <option value="Idaho">ID</option>
+                        <option value="Illinois">IL</option>
+                        <option value="Indiana">IN</option>
+                        <option value="Iowa">IA</option>
+                        <option value="Kansas">KS</option>
+                        <option value="Kentucky">KY</option>
+                        <option value="Louisiana">LA</option>
+                        <option value="Maine">ME</option>
+                        <option value="Maryland">MD</option>
+                        <option value="Massachusetts">MA</option>
+                        <option value="Michigan">MI</option>
+                        <option value="Minnesota">MN</option>
+                        <option value="Mississippi">MS</option>
+                        <option value="Missouri">MO</option>
+                        <option value="Montana">MT</option>
+                        <option value="Nebraska">NE</option>
+                        <option value="Nevada">NV</option>
+                        <option value="New Hampshire">NH</option>
+                        <option value="New Jersey">NJ</option>
+                        <option value="New Mexico">NM</option>
+                        <option value="New York">NY</option>
+                        <option value="North Carolina">NC</option>
+                        <option value="North Dakota">ND</option>
+                        <option value="Ohio">OH</option>
+                        <option value="Oklahoma">OK</option>
+                        <option value="Oregon">OR</option>
+                        <option value="Pennsylvania">PA</option>
+                        <option value="Rhode Island">RI</option>
+                        <option value="South Carolina">SC</option>
+                        <option value="South Dakota">SD</option>
+                        <option value="Tennessee">TN</option>
+                        <option value="Texas">TX</option>
+                        <option value="Utah">UT</option>
+                        <option value="Vermont">VT</option>
+                        <option value="Virginia">VA</option>
+                        <option value="Washington">WA</option>
+                        <option value="West Virginia">WV</option>
+                        <option value="Wisconsin">WI</option>
+                        <option value="Wyoming">WY</option>
+                    </select>
+                </div>
+                <!-- INCOME BOX  -->
+                <div id="income">
+                    <label id="income-label" for="income">Monthly income: </label>
+                    <input id="income-input" class="p-3" type="number" min="0" name="income"/>
+                </div>
+                <!-- ROWS & COLUMNS FOR GRID-LOOKING LAYOUT -->
+                <div class="row">
+                    <div class="col-4">
+                        <div class="heading">Needs</div>
+                        <div class="input-group">
+                            <label for="housing">Housing cost: </label>
+                            <input class="p-3" type="number" min="0" name="housing"/>
+                        </div>
+                        <div class="input-group">
+                            <label for="utilities">Utility cost: </label>
+                            <input class="p-3" type="number" min="0" name="utilities"/>
+                        </div>
+                        <div class="input-group">
+                            <label for="groceries">Grocery cost: </label>
+                            <input class="p-3" type="number" min="0" name="groceries"/>
+                        </div>
+                        <div class="input-group">
+                            <label for="transportation">Transportation cost: </label>
+                            <input class="p-3" type="number" min="0" name="transportation"/>
+                        </div>
+                        <div class="input-group">
+                            <label for="healthcare">Healthcare cost: </label>
+                            <input class="p-3" type="number" min="0" name="healthcare"/>
+                        </div>
+                        <div class="w-100"></div>
+                    </div>
+                    <div class="col-4">
+                        <div class="heading">Wants</div>
+                        <div class="input-group">
+                            <label for="entertainment">Entertainment cost: </label>
+                            <input class="p-3" type="number" min="0" name="entertainment"/>
+                        </div>
+                        <div class="input-group">
+                            <label id="dining" for="dining">Dining/Eating out cost: </label>
+                            <input class="p-3" type="number" min="0" name="dining"/>
+                        </div>
+                        <div class="input-group">
+                            <label for="hobbies">Hobby cost: </label>
+                            <input class="p-3" type="number" min="0" name="hobbies"/>
+                        </div>
+                        <div class="input-group">
+                            <label for="personal">Personal Spending cost: </label>
+                            <input class="p-3" type="number" min="0" name="personal"/>
+                        </div>
+                        <div class="w-100"></div>
+                    </div>
+                    <div class="col-4">
+                        <div class="heading">Savings</div>
+                        <div class="input-group">
+                            <label for="emergency">Emergency fund: </label>
+                            <input class="p-3" type="number" min="0" name="emergency"/>
+                        </div>
+                        <div class="input-group">
+                            <label for="retirement">Retirement fund: </label>
+                            <input class="p-3" type="number" min="0" name="retirement"/>
+                        </div>
+                        <div class="input-group">
+                            <label for="vacation">Vacation fund: </label>
+                            <input class="p-3" type="number" min="0" name="vacation"/>
+                        </div>
+                    </div>
+                </div>
+                <input class="btn btn-primary" type="submit" value="Submit" name="submit">
+            </form>
+
+            <!-- Link to Bootstrap JS --> 
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+        </div>
+    </div>
+</body>
+</html>

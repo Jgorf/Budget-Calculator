@@ -24,9 +24,22 @@ def update():
         myForm["groceries"]) + float(myForm["transportation"]) + float(
             myForm["healthcare"])
     wants = float(myForm["entertainment"]) + float(myForm["dining"]) + float(
-        myForm["hobbies"]) + float(myForm["personal"])
+        myForm["hobbies"]) + float(myForm["clothing"]) + float(myForm["travelling"])
     savings = float(myForm["emergency"]) + float(myForm["retirement"]) + float(
         myForm["vacation"])
+
+    #Adds any additional need/want/saving costs to the sum of the costs for existing entries
+    print(request.form.getlist("needsFields_value"))
+    for val in request.form.getlist("needsFields_value"): 
+        needs += float(val)
+
+    for val in request.form.getlist("wantsFields_value"): 
+        wants += float(val)
+
+    for val in request.form.getlist("savingsFields_value"): 
+        savings += float(val)
+
+    
 
     socialSec = income * 0.062
     federalTax = 0
@@ -48,10 +61,6 @@ def update():
 
     state_tax = taxes[state] * income
 
-    print(socialSec)
-    print(federalTax)
-    print(state_tax)
-    
     taxed_amnt = socialSec + federalTax + state_tax
 
     taxedIncome = income - (taxed_amnt)
@@ -74,34 +83,25 @@ def update():
     }
 
     if needs_percentage > 50:
-        results[
-            'needAdvice'] = "Your needs section is over 50% of your income. Consider reducing your spending on needs."
+        results['needAdvice'] = "Your needs section is over 50% of your income. Consider reducing your spending on needs."
     elif needs_percentage == 50:
-        results[
-            'needAdvice'] = "Your needs section is exactly 50% of your income. Good job!"
+        results['needAdvice'] = "Your needs section is exactly 50% of your income. Good job!"
     else:
-        results[
-            'needAdvice'] = "Your needs section is below 50% of your income. You might allocate more to your needs."
+        results['needAdvice'] = "Your needs section is below 50% of your income. You might allocate more to your needs."
 
     if wants_percentage > 30:
-        results[
-            'wantAdvice'] = "Your wants section is over 30% of your income. Consider reducing your spending on wants."
+        results['wantAdvice'] = "Your wants section is over 30% of your income. Consider reducing your spending on wants."
     elif wants_percentage == 30:
-        results[
-            'wantAdvice'] = "Your wants section is 30% of your income. Well done!"
+        results['wantAdvice'] = "Your wants section is 30% of your income. Well done!"
     else:
-        results[
-            'wantAdvice'] = "Your wants section is below 30% of your income. You might allocate more to your wants."
+        results['wantAdvice'] = "Your wants section is below 30% of your income. You might allocate more to your wants."
 
     if savings_percentage > 20:
-        results[
-            'savingAdvice'] = "Your savings section is over 20% of your income. You are saving well!"
+        results['savingAdvice'] = "Your savings section is over 20% of your income. You are saving well!"
     elif savings_percentage == 20:
-        results[
-            'savingAdvice'] = "Your savings section is 20% of your income. Good job!"
+        results['savingAdvice'] = "Your savings section is 20% of your income. Good job!"
     else:
-        results[
-            'savingAdvice'] = "Your savings section is below 20% of your income. Consider saving more."
+        results['savingAdvice'] = "Your savings section is below 20% of your income. Consider saving more."
 
     return render_template('update.html', results=results)
 

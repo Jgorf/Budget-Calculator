@@ -1,169 +1,186 @@
 body{
-    background-color: #35667C;
-    /* min-width:1000px;  */
-    /* font-family: none; */
-  }
-  .wrapper {
-    background-color: #fff;
-    border-radius: 25px;
-    margin: 2%;
-    padding-top: 10px;
-  }
-  
-  #update-body {
-    display: flex;
-    min-height: 100vh;
-    flex-wrap: wrap;
-    align-content: center;
-  }
-  
-  #update-wrapper {
-    display: flex;
-    width: 100%;
-    height: 685px;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  h1 { 
-    font: italic bold 12px/30px Georgia, serif;
-    font-size: 25px;
-    text-align: center;
-    margin: 30px 0;
-  }
-  h2,h3 {
-    text-align: center;
-    font-family: "Times New Roman", Times, serif;
-    font-size: 18px;
-    letter-spacing: 1.4px;
-    word-spacing: 2px;
-    color: #000000;
-    font-weight: bold;
-    font-style: normal;
-    font-variant: normal;
-    text-transform: none;
-  }
-  
-  p {
-    text-align:center;
-    font: italic bold 12px/15px Georgia, serif;
-  }
-  
-  #dining {
-    padding-right: 5px;
-  }
-  
-  div.heading {
-    font-size: 25px;
-    padding-bottom: 3px;
-    margin-bottom: 30px;
-    border-bottom: 1px solid #000;
-  }
-  /* div.heading img {
-    width: 80px;
-    padding-left: 20px;
-  } */
-  
-  .p-3{
-    font: italic bold 12px/30px Georgia, serif;
-  }
-  input{
-    /* display: block; */
-    background-color: #d6d1d1;
-    /* margin-right: 10px; */
-    text-align: center;
-  
-  }
-  /* Chrome, Safari, Edge, Opera */
-  input::-webkit-outer-spin-button,
-  input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-  
-  /* Firefox */
-  input[type=number] {
-    -moz-appearance: textfield;
-  }
-  
-  #stateSelect {
-    text-align: center;
-    margin-bottom: 30px
-  }
-  
-  #stateSelect select {
-    background-color: #d6d1d1;
-  }
-  
-  
-  .cardWrapper {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    height: 500px;
-    align-content: center;
-    gap: 15px;
-  }
-  .card {
-    background-color: #d6d1d1;
-  }
-  
-  #needs-img, #wants-img, #savings-img {
-    margin: 0 auto;
-    padding-top: 10px;
-  }
-  #needs-img {
-    width: 12rem;
-  }
-  #wants-img {
-    width: 18rem;
-  }
-  #savings-img {
-    width: 13rem;
-    padding-bottom: 10px
-  }
-  .input-group {
-    font: italic bold 12px/30px Georgia, serif;
-    display: flex;
-    margin-bottom: 30px;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .input-group label, .input-group input {
-    width: 50%;
-  }
-  /* input-group #income-label, .input-group #income-input {
-    width: 20%;
-  } */
-  
-  #income {
-    display: flex;
-    margin-bottom: 30px;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  #income label{
-    font: italic bold 12px/30px Georgia, serif;
-  }
-  #income label, #income input {
-    width: 20%;
-  }
-  
-  form.go-back {
-    text-align: center;
-  }
-  
-  @media (min-width: 1400px) {
-    .row {
-      justify-content: center;
-    }
-  
-    .col-4 {
-      width: 24.333333%;
-    }
+  background-color: #35667C;
+  /* min-width:1000px;  */
+  /* font-family: none; */
+}
+.wrapper {
+  background-color: #fff;
+  border-radius: 25px;
+  margin: 2%;
+  padding-top: 10px;
+}
+
+#update-body {
+  display: flex;
+  min-height: 100vh;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+#update-wrapper {
+  display: flex;
+  background-color: #fff;
+  border-radius: 25px;
+  width: 100%;
+  height: 685px;
+  flex-direction: column;
+  justify-content: center;
   
 }
-  
-  
+
+h1 { 
+  font: italic bold 12px/30px Georgia, serif;
+  font-size: 25px;
+  text-align: center;
+  margin: 30px 0;
+}
+h2,h3 {
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+  letter-spacing: 1.4px;
+  word-spacing: 2px;
+  color: #000000;
+  font-weight: bold;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+}
+
+p {
+  text-align:center;
+  font: italic bold 12px/15px Georgia, serif;
+}
+
+/* form {
+  margin: 1em 0;
+} */
+
+div.heading {
+  font-size: 30px;
+  padding-bottom: 3px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #000;
+}
+/* div.heading img {
+  width: 80px;
+  padding-left: 20px;
+} */
+
+.p-3{
+  font: italic bold 12px/30px Georgia, serif;
+}
+input{
+  /* display: block; */
+  background-color: #d6d1d1;
+  /* margin-right: 10px; */
+  text-align: center;
+
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+#stateSelect {
+  text-align: center;
+  margin-bottom: 30px
+}
+
+#stateSelect select {
+  background-color: #d6d1d1;
+}
+
+
+.cardWrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 500px;
+  align-content: center;
+  gap: 15px;
+}
+.card {
+  background-color: #d6d1d1;
+}
+
+#needs-img, #wants-img, #savings-img {
+  margin: 0 auto;
+  padding-top: 10px;
+}
+#needs-img {
+  width: 12rem;
+}
+#wants-img {
+  width: 18rem;
+}
+#savings-img {
+  width: 13rem;
+  padding-bottom: 10px
+}
+
+#dollar-sign {
+  width: 1.5rem;
+}
+
+.input-group {
+  font: italic bold 12px/30px Georgia, serif;
+  display: flex;
+  margin-bottom: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-group-text {
+  justify-content: center;
+  background-color: #bbc4cd;
+}
+
+.input-group label, .input-group input {
+  width: 50%;
+}
+/* input-group #income-label, .input-group #income-input {
+  width: 20%;
+} */
+
+#income {
+  display: flex;
+  margin-bottom: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+#income label{
+  font: italic bold 12px/30px Georgia, serif;
+}
+#income label, #income input {
+  width: 20%;
+}
+
+.form-control {
+  justify-content: center;
+  width: 50%
+}
+
+form.go-back {
+  text-align: center;
+}
+
+@media (min-width: 1400px) {
+  .row {
+    justify-content: center;
+  }
+
+  .col-4 {
+    width: 24.333333%;
+  }
+}
+
+

@@ -1,8 +1,11 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Budget Calculator</title>
-    <!-- Link to Bootstrap CSS. -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- Link to Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Link to custom CSS in style.css -->
     <link rel="stylesheet" href="../static/css/style.css">
 </head>
@@ -71,77 +74,103 @@
                 </div>
                 <!-- INCOME BOX  -->
                 <div id="income">
-                    <label id="income-label" for="income">Monthly income: </label>
+                    <label id="income-label" for="income">Gross monthly income: </label>
                     <input id="income-input" class="p-3" type="number" min="0" name="income"/>
                 </div>
                 <!-- ROWS & COLUMNS FOR GRID-LOOKING LAYOUT -->
                 <div class="row">
                     <div class="col-4">
                         <div class="heading">Needs</div>
-                        <div class="input-group">
-                            <label for="housing">Housing cost: </label>
-                            <input class="p-3" type="number" min="0" name="housing"/>
+                        <div id="needsFields">
+                            <div class="input-group mb-3">
+                                <label for="housing" class="input-group-text">Housing</label>
+                                <img id="dollar-sign" src="../static/images/dollar-sign.png">
+                                <input class="form-control" type="number" min="0" name="housing" placeholder="Amount"/>
+                            </div>
+                            <div class="input-group mb-3">
+                                <label class="input-group-text" for="utilities">Utilities</label>
+                                <img id="dollar-sign" src="../static/images/dollar-sign.png">
+                                <input class="form-control" type="number" min="0" name="utilities" placeholder="Amount"/>
+                            </div>
+                            <div class="input-group mb-3">
+                                <label class="input-group-text" for="groceries">Groceries</label>
+                                <img id="dollar-sign" src="../static/images/dollar-sign.png">
+                                <input class="form-control" type="number" min="0" name="groceries" placeholder="Amount"/>
+                            </div>
+                            <div class="input-group mb-3">
+                                <label class="input-group-text" for="transportation">Transportation</label>
+                                <img id="dollar-sign" src="../static/images/dollar-sign.png">
+                                <input class="form-control" type="number" min="0" name="transportation" placeholder="Amount"/>
+                            </div>
+                            <div class="input-group mb-3">
+                                <label class="input-group-text" for="healthcare">Healthcare</label>
+                                <img id="dollar-sign" src="../static/images/dollar-sign.png">
+                                <input class="form-control" type="number" min="0" name="healthcare" placeholder="Amount"/>
+                            </div>
+                            
+                            
                         </div>
-                        <div class="input-group">
-                            <label for="utilities">Utility cost: </label>
-                            <input class="p-3" type="number" min="0" name="utilities"/>
-                        </div>
-                        <div class="input-group">
-                            <label for="groceries">Grocery cost: </label>
-                            <input class="p-3" type="number" min="0" name="groceries"/>
-                        </div>
-                        <div class="input-group">
-                            <label for="transportation">Transportation cost: </label>
-                            <input class="p-3" type="number" min="0" name="transportation"/>
-                        </div>
-                        <div class="input-group">
-                            <label for="healthcare">Healthcare cost: </label>
-                            <input class="p-3" type="number" min="0" name="healthcare"/>
-                        </div>
-                        <div class="w-100"></div>
+                        <button type="button" id="addNeed" class="btn btn-secondary btn-sm">Add Need</button>
                     </div>
                     <div class="col-4">
                         <div class="heading">Wants</div>
-                        <div class="input-group">
-                            <label for="entertainment">Entertainment cost: </label>
-                            <input class="p-3" type="number" min="0" name="entertainment"/>
+                        <div id="wantsFields">
+                            <div class="input-group mb-3">
+                                <label for="entertainment" class="input-group-text">Entertainment</label>
+                                <img id="dollar-sign" src="../static/images/dollar-sign.png">
+                                <input class="form-control" type="number" min="0" name="entertainment" placeholder="Amount"/>
+                            </div>
+                            <div class="input-group mb-3">
+                                <label for="dining" class="input-group-text">Dining/Eating out</label>
+                                <img id="dollar-sign" src="../static/images/dollar-sign.png">
+                                <input class="form-control" type="number" min="0" name="dining" placeholder="Amount"/>
+                            </div>
+                            <div class="input-group mb-3">
+                                <label for="hobbies" class="input-group-text">Hobbies</label>
+                                <img id="dollar-sign" src="../static/images/dollar-sign.png">
+                                <input class="form-control" type="number" min="0" name="hobbies" placeholder="Amount"/>
+                            </div>
+                            <div class="input-group mb-3">
+                                <label for="clothing" class="input-group-text">Clothing</label>
+                                <img id="dollar-sign" src="../static/images/dollar-sign.png">
+                                <input class="form-control" type="number" min="0" name="clothing" placeholder="Amount"/>
+                            </div>
+                            <div class="input-group mb-3">
+                                <label for="travelling" class="input-group-text">Travelling</label>
+                                <img id="dollar-sign" src="../static/images/dollar-sign.png">
+                                <input class="form-control" type="number" min="0" name="travelling" placeholder="Amount"/>
+                            </div>
                         </div>
-                        <div class="input-group">
-                            <label id="dining" for="dining">Dining/Eating out cost: </label>
-                            <input class="p-3" type="number" min="0" name="dining"/>
-                        </div>
-                        <div class="input-group">
-                            <label for="hobbies">Hobby cost: </label>
-                            <input class="p-3" type="number" min="0" name="hobbies"/>
-                        </div>
-                        <div class="input-group">
-                            <label for="personal">Personal Spending cost: </label>
-                            <input class="p-3" type="number" min="0" name="personal"/>
-                        </div>
-                        <div class="w-100"></div>
+                        <button type="button" id="addWant" class="btn btn-secondary btn-sm">Add Want</button>
                     </div>
                     <div class="col-4">
                         <div class="heading">Savings</div>
-                        <div class="input-group">
-                            <label for="emergency">Emergency fund: </label>
-                            <input class="p-3" type="number" min="0" name="emergency"/>
+                        <div id="savingsFields">
+                            <div class="input-group mb-3">
+                                <label for="emergency" class="input-group-text">Emergency fund</label>
+                                <img id="dollar-sign" src="../static/images/dollar-sign.png">
+                                <input class="form-control" type="number" min="0" name="emergency" placeholder="Amount"/>
+                            </div>
+                            <div class="input-group mb-3">
+                                <label for="retirement" class="input-group-text">Retirement fund</label>
+                                <img id="dollar-sign" src="../static/images/dollar-sign.png">
+                                <input class="form-control" type="number" min="0" name="retirement" placeholder="Amount"/>
+                            </div>
+                            <div class="input-group mb-3">
+                                <label for="vacation" class="input-group-text">Vacation</label>
+                                <img id="dollar-sign" src="../static/images/dollar-sign.png">
+                                <input class="form-control" type="number" min="0" name="vacation" placeholder="Amount"/>
+                            </div>
                         </div>
-                        <div class="input-group">
-                            <label for="retirement">Retirement fund: </label>
-                            <input class="p-3" type="number" min="0" name="retirement"/>
-                        </div>
-                        <div class="input-group">
-                            <label for="vacation">Vacation fund: </label>
-                            <input class="p-3" type="number" min="0" name="vacation"/>
-                        </div>
+                        <button type="button" id="addSaving" class="btn btn-secondary btn-sm">Add Saving</button>
                     </div>
                 </div>
-                <input class="btn btn-primary" type="submit" value="Submit" name="submit">
+                <input class="btn btn-primary mt-3 mb-3" type="submit" value="Submit" name="submit">
             </form>
 
-            <!-- Link to Bootstrap JS --> 
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-
+            <!-- Link to Bootstrap JS and main.js -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="../static/javascript/main.js"></script>
         </div>
     </div>
 </body>
